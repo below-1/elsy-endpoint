@@ -53,3 +53,4 @@ class Edge:
         items = ( (k, getattr(self, k)) for k in Edge_allowed_keys)
         not_none = ( (k, v) for k, v in items if v is not None )
         return { k: v for k,v in not_none }
+
