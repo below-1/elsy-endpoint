@@ -24,7 +24,6 @@ class Graph:
         key = frozenset({ u, v })
         if key not in self.path:
             raise Exception("Path not found")
-        print(self.path[key])
         return float(self.path[key].length)
 
     def edge_for(self, u, v):
@@ -86,7 +85,8 @@ def dijkstra(source: str, graph: Graph):
         u = min_dist()
         Q.remove(u)
 
-        for v in neighbours(u):
+        uneighbours = neighbours(u)
+        for v in uneighbours:
             du = dist[u]
             dv = dist[v]
             lv = graph.length(u, v)

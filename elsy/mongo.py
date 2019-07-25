@@ -54,3 +54,6 @@ class Edge:
         not_none = ( (k, v) for k, v in items if v is not None )
         return { k: v for k,v in not_none }
 
+    def __repr__(self):
+        return f"(_id={self._id} a={self.aId} b={self.bId} length={self.length})"
+
