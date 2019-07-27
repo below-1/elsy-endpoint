@@ -54,6 +54,7 @@ class Graph:
         graph.construct_edge_map()
         return graph
 
+
 def dijkstra(source: str, graph: Graph):
     edges = graph.edges
     nodes = graph.nodes
@@ -131,13 +132,14 @@ class ElsyTSPABC:
         self.edges = edges
         self._dist = {}
         self._prev = {}
+        self._graph = None
 
     def calc_nodes_dist(self):
         all_nodes = [*self.nodes, *self.inters]
+        graph = Graph(all_nodes, self.edges)
+        graph.construct_edge_map()
+        self._graph = graph
         for source in self.nodes:
-            graph = Graph(all_nodes, self.edges)
-            graph.construct_edge_map()
-            
             dist, prev = dijkstra(source, graph)
 
             # Make sure there is valid connection between this node and the rest of graph
@@ -242,14 +244,18 @@ class ElsyTSPABC:
                 if count >= limit:
                     abandoned[j] = True
 
-            print(f"iter-{i}, min Fx: {min(Fx)}")
-            print(f"total abandoned = {len(abandoned)}")
-            print("\n")
+            # print(f"iter-{i}, min Fx: {min(Fx)}")
+            # print(f"total abandoned = {len(abandoned)}")
 
         min_Fx = min(Fx)
         min_index = Fx.index(min_Fx)
-        result = Xs[min_index]
-        print("result=", result)
+        min_sol = Xs[min_index]
+
+        # Construct the path
+        route = self._construct_shortest_route(min_sol)
+        print("route=", len(route))
+
+        # print("graph.edges", route)
 
     def _shuff_sol(self, xs):
         vs = xs[:]
@@ -274,3 +280,12 @@ class ElsyTSPABC:
                 if r <= ws[i]:
                     results.append((i, opt))
         return results
+
+    def _construct_shortest_route(self, path):
+        result = []
+        for i in range(len(path) - 1):
+            u = path[i]
+            v = path[i + 1]
+            subpath = shortest_path(u, v, self._prev[u])
+            result.extend(subpath)
+        return result

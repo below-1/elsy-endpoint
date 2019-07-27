@@ -4,8 +4,6 @@
     <list default="true" id="15452f01-78be-4354-bb5f-542bc960e244" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elsy/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/elsy/core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elsy/routes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/elsy/routes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elsy/routes/test_dijkstra.py" beforeDir="false" afterPath="$PROJECT_DIR$/elsy/routes/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elsy/routes/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="185">
+              <caret line="106" column="44" lean-forward="true" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -30,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elsy/routes/node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
+            <state relative-caret-position="375">
               <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
@@ -42,11 +40,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elsy/core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="187" column="43" selection-start-line="187" selection-start-column="43" selection-end-line="187" selection-end-column="43" />
+            <state relative-caret-position="470">
+              <caret line="287" column="27" lean-forward="true" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#605#673#0" />
+                <element signature="e#717#814#0" />
+                <element signature="e#862#1010#0" />
+                <element signature="e#1327#1521#0" />
+                <element signature="e#1568#2628#0" />
+                <element signature="e#3651#4073#0" />
                 <element signature="e#5585#5653#0" />
+                <element signature="e#5239#5442#0" />
+                <element signature="e#6614#6918#0" />
               </folding>
             </state>
           </provider>
@@ -156,10 +162,19 @@
       <option name="presentableId" value="Default" />
       <updated>1563411349386</updated>
     </task>
+    <task id="LOCAL-00001" summary="Done basic abc">
+      <created>1564211367734</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1564211367734</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="22" width="1372" height="750" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962853" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -179,6 +194,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Done basic abc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done basic abc" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/miniconda3/envs/elsy-web/lib/python3.7/site-packages/flask/blueprints.py">
@@ -285,8 +304,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elsy/routes/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="185">
+          <caret line="106" column="44" lean-forward="true" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
@@ -295,7 +314,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elsy/routes/node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
+        <state relative-caret-position="375">
           <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
@@ -305,11 +324,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elsy/core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="187" column="43" selection-start-line="187" selection-start-column="43" selection-end-line="187" selection-end-column="43" />
+        <state relative-caret-position="470">
+          <caret line="287" column="27" lean-forward="true" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#605#673#0" />
+            <element signature="e#717#814#0" />
+            <element signature="e#862#1010#0" />
+            <element signature="e#1327#1521#0" />
+            <element signature="e#1568#2628#0" />
+            <element signature="e#3651#4073#0" />
             <element signature="e#5585#5653#0" />
+            <element signature="e#5239#5442#0" />
+            <element signature="e#6614#6918#0" />
           </folding>
         </state>
       </provider>
