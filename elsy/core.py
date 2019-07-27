@@ -21,6 +21,13 @@ class SimpleEdge:
 
 class Graph:
     def __init__(self, nodes, edges):
+        '''
+        For the love of Mother Earth, you should ensure that nodes you suplied,
+        is linked to at least one other node.
+        And BTW this is undirected graph.
+        :param nodes: nodes.
+        :param edges: edges.
+        '''
         self.nodes = nodes
         self.edges = edges
         self.path = {}
@@ -36,7 +43,13 @@ class Graph:
             raise Exception("Path not found")
         return float(self.path[key].length)
 
-    def edge_for(self, u, v):
+    def direct_edge_for(self, u, v):
+        '''
+        Construct direct edge that joining node u and v.
+        :param u: Node
+        :param v: Node.
+        :return: Edge that connect u and v.
+        '''
         for e in self.edges:
             if u == e.aId:
                 if v == e.bId:
@@ -56,6 +69,14 @@ class Graph:
 
 
 def dijkstra(source: str, graph: Graph):
+    '''
+    Calculate the minimum route and its distance
+    for each route from source to every other nodein graph.
+    :param source: starting point of algorithm
+    :param graph: The the graph.
+    :return: (dist, prev) dist is map of minimum distance from source.
+        and prev is some kind of map we use to travel back to starting point.
+    '''
     edges = graph.edges
     nodes = graph.nodes
     Q = set()
@@ -253,7 +274,7 @@ class ElsyTSPABC:
 
         # Construct the path
         route = self._construct_shortest_route(min_sol)
-        print("route=", len(route))
+        print("route=", route)
 
         # print("graph.edges", route)
 
@@ -286,6 +307,21 @@ class ElsyTSPABC:
         for i in range(len(path) - 1):
             u = path[i]
             v = path[i + 1]
+
+            # Here we construct the indirect route.
             subpath = shortest_path(u, v, self._prev[u])
-            result.extend(subpath)
+
+            # After we get the indirect route,
+            # We need to span/unfold the indirect into direct one.
+            # Because the assumption states that each node at least connected one time,
+            # There must be a direct route connected u and v.
+            for j in range(len(subpath) - 1):
+                sub_u = subpath[j]
+                sub_v = subpath[j + 1]
+                edge = self._graph.direct_edge_for(sub_u, sub_v)
+                if edge is None:
+                    msg = f"Can't find direct route between sub_u={sub_u} and sub_v={sub_v}"
+                    raise Exception(msg)
+                result.append(edge)
+
         return result
