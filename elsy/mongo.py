@@ -2,6 +2,8 @@ from elsy.config import MONGO_URI
 from pymongo import MongoClient
 from werkzeug.local import LocalProxy
 from flask import g
+from bson.objectid import ObjectId
+
 
 client = MongoClient(MONGO_URI)
 
@@ -57,3 +59,12 @@ class Edge:
     def __repr__(self):
         return f"(_id={self._id} a={self.aId} b={self.bId} length={self.length})"
 
+def get_edges_by_ids(ids: list):
+    oids = [ ObjectId(id) for id in ids ]
+    edges = mongo_db.edge.find({
+        "_id": {
+            "$in": oids
+        }
+    })
+    edges = list(edges)
+    return edges

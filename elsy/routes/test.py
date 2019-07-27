@@ -1,5 +1,5 @@
 from elsy.routes.blueprint import bp
-from elsy.mongo import mongo_db, Node, Edge
+from elsy.mongo import mongo_db, Node, Edge, get_edges_by_ids
 from elsy.core import Graph, dijkstra, shortest_path_to, SimpleEdge, ElsyTSPABC
 from flask import jsonify
 
@@ -109,17 +109,12 @@ def test_abc_tsp():
     edges = list(mongo_db.edge.find())
     edges = [SimpleEdge.fromdict(e) for e in edges]
 
+    # return jsonify(edges)
     abc = ElsyTSPABC(nodes, inters, edges)
     abc.calc_nodes_dist()
     route = abc.abc(nodes[0], n=10, limit=10)
+    edges_ids = [ r._id for r in route ]
 
-    # for n in nodes:
-    #     print(f"n={n}")
-    #     maps = abc._dist[n]
-    #     for k, v in maps.items():
-    #         if k not in nodes:
-    #             continue
-    #         print(f"{k} -> {v}")
-    #     input()
+    edges = get_edges_by_ids(edges_ids)
 
-    return jsonify(route)
+    return jsonify(edges)
