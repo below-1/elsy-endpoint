@@ -274,9 +274,7 @@ class ElsyTSPABC:
 
         # Construct the path
         route = self._construct_shortest_route(min_sol)
-        print("route=", route)
-
-        # print("graph.edges", route)
+        return route
 
     def _shuff_sol(self, xs):
         vs = xs[:]

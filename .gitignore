@@ -24,3 +24,4 @@ htmlcov/
 
 # PyCharm
 .idea/
+.idea/workspace.xml

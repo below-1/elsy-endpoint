@@ -111,7 +111,7 @@ def test_abc_tsp():
 
     abc = ElsyTSPABC(nodes, inters, edges)
     abc.calc_nodes_dist()
-    abc.abc(nodes[0], n=10, limit=10)
+    route = abc.abc(nodes[0], n=10, limit=10)
 
     # for n in nodes:
     #     print(f"n={n}")
@@ -122,4 +122,4 @@ def test_abc_tsp():
     #         print(f"{k} -> {v}")
     #     input()
 
-    return "OK"
+    return jsonify(route)
