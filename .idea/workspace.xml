@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15452f01-78be-4354-bb5f-542bc960e244" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elsy/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/elsy/core.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elsy/routes/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="106" column="44" lean-forward="true" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
+            <state relative-caret-position="1957">
+              <caret line="106" column="44" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -28,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elsy/routes/node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="1292">
               <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
@@ -37,23 +37,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elsy/core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="287" column="27" lean-forward="true" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
+            <state relative-caret-position="342">
+              <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#605#673#0" />
-                <element signature="e#717#814#0" />
-                <element signature="e#862#1010#0" />
-                <element signature="e#1327#1521#0" />
-                <element signature="e#1568#2628#0" />
-                <element signature="e#3651#4073#0" />
-                <element signature="e#5585#5653#0" />
-                <element signature="e#5239#5442#0" />
-                <element signature="e#6614#6918#0" />
+                <element signature="e#50#544#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -71,6 +72,7 @@
     <findStrings>
       <find>print</find>
       <find>exit</find>
+      <find>edge_for</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -88,13 +90,13 @@
         <option value="$PROJECT_DIR$/elsy/core/types.py" />
         <option value="$PROJECT_DIR$/elsy/core/dijkstra.py" />
         <option value="$PROJECT_DIR$/elsy/repo.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/elsy/mongo.py" />
         <option value="$PROJECT_DIR$/elsy/routes/test_dijkstra.py" />
         <option value="$PROJECT_DIR$/elsy/routes/__init__.py" />
         <option value="$PROJECT_DIR$/elsy/routes/node.py" />
         <option value="$PROJECT_DIR$/elsy/routes/test.py" />
         <option value="$PROJECT_DIR$/elsy/core.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -109,6 +111,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -116,22 +119,10 @@
               <item name="elsy-unika-endpoint" type="b2602c69:ProjectViewProjectNode" />
               <item name="elsy-unika-endpoint" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="elsy-unika-endpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elsy-unika-endpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="elsy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elsy-unika-endpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elsy-unika-endpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="elsy" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -169,24 +160,31 @@
       <option name="project" value="LOCAL" />
       <updated>1564211367734</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Construct full path in ABC">
+      <created>1564214790488</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564214790489</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="22" width="1372" height="750" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962853" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962853" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329927" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.6277372" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.71532845" />
@@ -197,7 +195,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Done basic abc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done basic abc" />
+    <MESSAGE value="Construct full path in ABC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Construct full path in ABC" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/miniconda3/envs/elsy-web/lib/python3.7/site-packages/flask/blueprints.py">
@@ -285,13 +284,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elsy/routes/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -304,8 +296,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elsy/routes/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="106" column="44" lean-forward="true" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
+        <state relative-caret-position="1957">
+          <caret line="106" column="44" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
@@ -314,7 +306,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elsy/routes/node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="1292">
           <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
@@ -324,20 +316,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elsy/core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="287" column="27" lean-forward="true" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
+        <state relative-caret-position="342">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#605#673#0" />
-            <element signature="e#717#814#0" />
-            <element signature="e#862#1010#0" />
-            <element signature="e#1327#1521#0" />
-            <element signature="e#1568#2628#0" />
-            <element signature="e#3651#4073#0" />
-            <element signature="e#5585#5653#0" />
-            <element signature="e#5239#5442#0" />
-            <element signature="e#6614#6918#0" />
+            <element signature="e#50#544#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
         </state>
       </provider>
     </entry>
