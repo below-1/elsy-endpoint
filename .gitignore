@@ -23,5 +23,5 @@ htmlcov/
 *,cover
 
 # PyCharm
-.idea/
-.idea/workspace.xml
+.idea*
+.idea/*

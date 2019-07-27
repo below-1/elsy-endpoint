@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15452f01-78be-4354-bb5f-542bc960e244" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elsy/json_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/elsy/json_encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elsy/mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/elsy/mongo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elsy/routes/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/elsy/routes/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elsy/core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="319" column="21" lean-forward="true" selection-start-line="319" selection-start-column="21" selection-end-line="319" selection-end-column="21" />
+            <state relative-caret-position="377">
+              <caret line="312" column="35" selection-start-line="312" selection-start-column="35" selection-end-line="312" selection-end-column="35" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -48,28 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elsy/json_encoder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elsy/mongo.py">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-                <element signature="e#474#1148#0" />
-                <element signature="e#1166#1828#0" />
-              </folding>
+            <state relative-caret-position="320">
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -107,11 +88,11 @@
         <option value="$PROJECT_DIR$/elsy/routes/test_dijkstra.py" />
         <option value="$PROJECT_DIR$/elsy/routes/__init__.py" />
         <option value="$PROJECT_DIR$/elsy/routes/node.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/elsy/json_encoder.py" />
-        <option value="$PROJECT_DIR$/elsy/core.py" />
         <option value="$PROJECT_DIR$/elsy/routes/test.py" />
         <option value="$PROJECT_DIR$/elsy/mongo.py" />
+        <option value="$PROJECT_DIR$/elsy/core.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -122,33 +103,27 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="elsy-unika-endpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elsy-unika-endpoint" type="462c0819:PsiDirectoryNode" />
+              <item name="elsy-unika-endpoint" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/project15/elsy-unika-endpoint" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
-              <item name="elsy-unika-endpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elsy-unika-endpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="elsy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elsy-unika-endpoint" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elsy-unika-endpoint" type="462c0819:PsiDirectoryNode" />
-              <item name="elsy" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="elsy-unika-endpoint" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/project15/elsy-unika-endpoint" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -214,7 +189,28 @@
       <option name="project" value="LOCAL" />
       <updated>1564230190542</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add get_edges_by_ids">
+      <created>1564232219799</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1564232219799</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add get_edges_by_ids">
+      <created>1564232229205</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1564232229205</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Reverse the sequence returned by shortest_path">
+      <created>1564238897792</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564238897792</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -232,8 +228,8 @@
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.38978103" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.38978103" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.71532845" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -247,7 +243,9 @@
     <MESSAGE value="Ignore workspace.xml" />
     <MESSAGE value="Change gitignore" />
     <MESSAGE value="Make testing endpoint return json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make testing endpoint return json" />
+    <MESSAGE value="add get_edges_by_ids" />
+    <MESSAGE value="Reverse the sequence returned by shortest_path" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reverse the sequence returned by shortest_path" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/miniconda3/envs/elsy-web/lib/python3.7/site-packages/flask/blueprints.py">
@@ -326,13 +324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elsy/routes/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -350,12 +341,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elsy/core.py">
+    <entry file="file://$PROJECT_DIR$/elsy/mongo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="319" column="21" lean-forward="true" selection-start-line="319" selection-start-column="21" selection-end-line="319" selection-end-column="21" />
+        <state relative-caret-position="260">
+          <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#474#1148#0" />
+            <element signature="e#1166#1828#0" />
           </folding>
         </state>
       </provider>
@@ -370,15 +363,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elsy/mongo.py">
+    <entry file="file://$PROJECT_DIR$/elsy/core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+        <state relative-caret-position="377">
+          <caret line="312" column="35" selection-start-line="312" selection-start-column="35" selection-end-line="312" selection-end-column="35" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#474#1148#0" />
-            <element signature="e#1166#1828#0" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
         </state>
       </provider>
     </entry>
