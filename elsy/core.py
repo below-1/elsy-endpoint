@@ -1,13 +1,23 @@
-class _Edge:
-    def __init__(self, edge):
-        self.aId = str(edge.aId)
-        self.bId = str(edge.bId)
-        self._id = str(edge._id)
-        self.length = edge.length
+import random
+import math
+
+class SimpleEdge:
+
+    allowed_keys = { "_id", "aId", "bId", "length" }
+
+    def __init__(self, _id=None, aId=None, bId=None, length=0):
+        self.aId = str(aId)
+        self.bId = str(bId)
+        self._id = str(_id)
+        self.length = float(length)
 
     def __repr__(self):
         return f"(_id={self._id}, aId={self.aId}, bId={self.bId}, length={self.length})"
 
+    @staticmethod
+    def fromdict(d):
+        df = {k: v for k, v in d.items() if k in SimpleEdge.allowed_keys }
+        return SimpleEdge(**df)
 
 class Graph:
     def __init__(self, nodes, edges):
@@ -38,8 +48,8 @@ class Graph:
 
     @staticmethod
     def frommongo(nodes, edges):
-        _nodes = [ str(n._id) for n in nodes ]
-        _edges = [ _Edge(e) for e in edges ]
+        _nodes = [ str(n['_id']) for n in nodes ]
+        _edges = [ SimpleEdge.fromdict(e) for e in edges ]
         graph = Graph(_nodes, _edges)
         graph.construct_edge_map()
         return graph
@@ -101,7 +111,7 @@ def dijkstra(source: str, graph: Graph):
 def shortest_path(source: str, target: str, prev):
     S = []
     u = target
-    if prev[u] != None or u != source:
+    if prev.get(u, None) != None or u != source:
         while u:
             S.append(u)
             u = prev[u]
@@ -112,3 +122,155 @@ def shortest_path(source: str, target: str, prev):
 
 def shortest_path_to(source, targets, prev):
     return [ shortest_path(source, t, prev) for t in targets ]
+
+
+class ElsyTSPABC:
+    def __init__(self, nodes, inters, edges):
+        self.nodes = nodes
+        self.inters = inters
+        self.edges = edges
+        self._dist = {}
+        self._prev = {}
+
+    def calc_nodes_dist(self):
+        all_nodes = [*self.nodes, *self.inters]
+        for source in self.nodes:
+            graph = Graph(all_nodes, self.edges)
+            graph.construct_edge_map()
+            
+            dist, prev = dijkstra(source, graph)
+
+            # Make sure there is valid connection between this node and the rest of graph
+            dvals = list(dist.values())
+            total_inf = sum(v == float('inf') for v in dvals)
+            if total_inf == len(dvals) - 1:
+                msg = f"This node is not connected to the rest of graph. source={source}"
+                raise Exception(msg)
+
+            self._dist[source] = dist
+            self._prev[source] = prev
+
+    def fitness(self, path):
+        if len(self._dist) == 0 or len(self._prev) == 0:
+            raise Exception("Distance and Prev not yet computed. please call calc_nodes_dist first")
+        
+        if len(path) < 2:
+            raise Exception("path must have at least 2 elements")
+        
+        total = 0
+        for i in range(len(path) - 1):
+            u = path[i]
+            v = path[i + 1]
+            total += self._dist[u][v]
+        return total
+
+    def abc(self, source, n=100, limit=10, maxiter=100):
+
+        Xs = []
+        Fx = []
+        abandoned = []
+
+        # Init phase
+        for i in range(n):
+            Xs.append(None)
+            Fx.append(None)
+            abandoned.append(True)
+
+        for i in range(maxiter):
+            # Scout bees first
+            # Take abandoned, modifying iterable while we iterating it.
+            # Iterate the copy then
+            for (ab_idx, abandon) in enumerate(abandoned):
+                if not abandon:
+                    continue
+
+                temp = self.nodes[:]
+                # Remove source for a while
+                temp = [ t for t in temp if t != source ]
+
+                # Jiggle Jiggle Little Shuffle
+                random.shuffle(temp)
+
+                # So we can put it in front of solution
+                temp = [ source, *temp ]
+
+                Xs[ab_idx] = temp
+
+                # Calculate fitness
+                Fx[ab_idx] = self.fitness(temp)
+
+                # Mark it as fresh one
+                abandoned[ab_idx] = False
+
+
+            # Employed phase
+            for j, xs in enumerate(Xs):
+                vs = self._shuff_sol(xs)
+                x_fit = Fx[j]
+                v_fit = self.fitness(vs)
+                if v_fit < x_fit:
+                    Xs[j] = vs
+                    Fx[j] = v_fit
+
+            # Onlooker phase
+            # Our objective is finding solution with minimum fitness
+            # So we need to make sure that the smallest fitness get the highest probability
+            max_fit =max(Fx)
+            invert_Fx = [ max_fit - fx for fx in Fx ]
+            total_fit = sum(invert_Fx)
+            Px = [ (fx * 1.0 / total_fit) for fx in invert_Fx ]
+
+            if abs(sum(Px) - 1.0) > 0.01:
+                msg = "total Px is not equal 1"
+                raise Exception(msg)
+
+            onlook_xs = self._choose_weighted(Xs, Px)
+
+            # Here the "j" record the original index of solution.
+            for j, xs in onlook_xs:
+                temp = xs[:]
+                count = 0
+                for k in range(limit):
+                    modified = self._shuff_sol(temp)
+                    m_fit = self.fitness(modified)
+                    x_fit = Fx[j]
+                    if m_fit < x_fit:
+                        Xs[j] = modified
+                        Fx[j] = m_fit
+                        break
+                    count += 1
+                if count >= limit:
+                    abandoned[j] = True
+
+            print(f"iter-{i}, min Fx: {min(Fx)}")
+            print(f"total abandoned = {len(abandoned)}")
+            print("\n")
+
+        min_Fx = min(Fx)
+        min_index = Fx.index(min_Fx)
+        result = Xs[min_index]
+        print("result=", result)
+
+    def _shuff_sol(self, xs):
+        vs = xs[:]
+        # Get index to swap
+        i_swap_1 = random.randint(0, len(vs) - 2)
+        i_swap_2 = i_swap_1 + 1
+        a = vs[i_swap_1]
+        b = vs[i_swap_2]
+        a, b = b, a
+        vs[i_swap_1] = a
+        vs[i_swap_2] = b
+        return vs
+    
+    def _choose_weighted(self, opts, ws):
+        assert len(opts) == len(ws)
+        assert abs(sum(ws) - 1.0) < 0.001
+
+        results = []
+        for n_onlook in range(len(opts)):
+            r = random.random()
+            for i, opt in enumerate(opts):
+                if r <= ws[i]:
+                    results.append((i, opt))
+        return results
