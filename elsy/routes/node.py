@@ -55,6 +55,7 @@ def find_nodes():
     filter = {}
 
     if 'jabatan' in request.args:
+
         jabatan = request.args['jabatan']
         if jabatan == 'all':
             filter["$or"] = [
@@ -65,6 +66,8 @@ def find_nodes():
             filter["jabatan"] = "rw"
         elif jabatan == "rt":
             filter["jabatan"] = "rt"
+        elif jabatan == "kl":
+            filter["jabatan"] = "kl"
         elif jabatan == 'intersection':
             filter["jabatan"] = "intersection"
 
