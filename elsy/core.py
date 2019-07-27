@@ -140,7 +140,8 @@ def shortest_path(source: str, target: str, prev):
     else:
         raise Exception("Source and target not connected")
 
-    return S
+    # Return reversed S. because we starting from target all the way back to the source.
+    return list(reversed(S))
 
 def shortest_path_to(source, targets, prev):
     return [ shortest_path(source, t, prev) for t in targets ]
@@ -308,6 +309,8 @@ class ElsyTSPABC:
 
             # Here we construct the indirect route.
             subpath = shortest_path(u, v, self._prev[u])
+            assert subpath[0] == u
+            assert subpath[-1] == v
 
             # After we get the indirect route,
             # We need to span/unfold the indirect into direct one.
