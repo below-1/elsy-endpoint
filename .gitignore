@@ -23,6 +23,6 @@ htmlcov/
 *,cover
 
 # PyCharm
-.idea/
+.idea*
 
 *__pycache__*
