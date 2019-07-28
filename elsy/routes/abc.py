@@ -16,6 +16,9 @@ def abc_tsp(source):
     inters = list(mongo_db.node.find({'jabatan': 'intersection'}))
 
     nodes = [str(n['_id']) for n in nodes]
+
+    assert source in nodes
+
     inters = [str(n['_id']) for n in inters]
 
     edges = list(mongo_db.edge.find())
@@ -24,9 +27,8 @@ def abc_tsp(source):
     # return jsonify(edges)
     abc = ElsyTSPABC(nodes, inters, edges)
     abc.calc_nodes_dist()
-    route = abc.abc(nodes[0], n=10, limit=10)
-    edges_ids = [ r._id for r in route ]
-
+    solution, route = abc.abc(source, n=10, limit=10)
+    edges_ids = [ e._id for e in route ]
     edges = get_edges_by_ids(edges_ids)
 
     return jsonify(edges)

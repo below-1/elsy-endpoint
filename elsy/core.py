@@ -215,8 +215,8 @@ class ElsyTSPABC:
                 # Jiggle Jiggle Little Shuffle
                 random.shuffle(temp)
 
-                # So we can put it in front of solution
-                temp = [ source, *temp ]
+                # So we can put it in front of solution and the back of solution
+                temp = [ source, *temp, source ]
 
                 Xs[ab_idx] = temp
 
@@ -230,6 +230,7 @@ class ElsyTSPABC:
             # Employed phase
             for j, xs in enumerate(Xs):
                 vs = self._shuff_sol(xs)
+                assert vs[0] == source == vs[-1]
                 x_fit = Fx[j]
                 v_fit = self.fitness(vs)
                 if v_fit < x_fit:
@@ -275,12 +276,17 @@ class ElsyTSPABC:
 
         # Construct the path
         route = self._construct_shortest_route(min_sol)
-        return route
+        return (min_sol, route)
 
     def _shuff_sol(self, xs):
         vs = xs[:]
+        assert len(vs) >= 4
+
         # Get index to swap
-        i_swap_1 = random.randint(0, len(vs) - 2)
+        # 0 < index < len(vs) - 2
+        # We need to exclude first and third index from the end
+        # last index is len(vs) - 3
+        i_swap_1 = random.randint(1, len(vs) - 3)
         i_swap_2 = i_swap_1 + 1
         a = vs[i_swap_1]
         b = vs[i_swap_2]
