@@ -194,6 +194,9 @@ class ElsyTSPABC:
         Fx = []
         abandoned = []
 
+        global_min_sol = None
+        global_min_fx = float("inf")
+
         # Init phase
         for i in range(n):
             Xs.append(None)
@@ -226,7 +229,6 @@ class ElsyTSPABC:
                 # Mark it as fresh one
                 abandoned[ab_idx] = False
 
-
             # Employed phase
             for j, xs in enumerate(Xs):
                 vs = self._shuff_sol(xs)
@@ -240,7 +242,7 @@ class ElsyTSPABC:
             # Onlooker phase
             # Our objective is finding solution with minimum fitness
             # So we need to make sure that the smallest fitness get the highest probability
-            max_fit =max(Fx)
+            max_fit = max(Fx)
             invert_Fx = [ max_fit - fx for fx in Fx ]
             total_fit = sum(invert_Fx)
             Px = [ (fx * 1.0 / total_fit) for fx in invert_Fx ]
@@ -266,17 +268,16 @@ class ElsyTSPABC:
                     count += 1
                 if count >= limit:
                     abandoned[j] = True
-
-            # print(f"iter-{i}, min Fx: {min(Fx)}")
-            # print(f"total abandoned = {len(abandoned)}")
-
-        min_Fx = min(Fx)
-        min_index = Fx.index(min_Fx)
-        min_sol = Xs[min_index]
+            min_Fx = min(Fx)
+            if min_Fx < global_min_fx:
+                min_index = Fx.index(min_Fx)
+                # Just copy it
+                global_min_sol = Xs[min_index][:]
+                global_min_fx = min_Fx
 
         # Construct the path
-        route = self._construct_shortest_route(min_sol)
-        return (min_sol, route)
+        route = self._construct_shortest_route(global_min_sol)
+        return (global_min_sol, route)
 
     def _shuff_sol(self, xs):
         vs = xs[:]
@@ -307,6 +308,15 @@ class ElsyTSPABC:
                     results.append((i, opt))
         return results
 
+    def _edge_connected(self, e1, e2):
+        candidate_1 = e1.aId
+        if candidate_1 == e2.aId or candidate_1 == e2.bId:
+            return True
+        candidate_2 = e1.bId
+        if candidate_2 == e2.aId or candidate_2 == e2.bId:
+            return True
+        return False
+
     def _construct_shortest_route(self, path):
         result = []
         for i in range(len(path) - 1):
@@ -322,6 +332,7 @@ class ElsyTSPABC:
             # We need to span/unfold the indirect into direct one.
             # Because the assumption states that each node at least connected one time,
             # There must be a direct route connected u and v.
+            subresult = []
             for j in range(len(subpath) - 1):
                 sub_u = subpath[j]
                 sub_v = subpath[j + 1]
@@ -329,6 +340,11 @@ class ElsyTSPABC:
                 if edge is None:
                     msg = f"Can't find direct route between sub_u={sub_u} and sub_v={sub_v}"
                     raise Exception(msg)
-                result.append(edge)
-
+                subresult.append(edge)
+            # subresult = list(reversed(subresult))
+            result.extend(subresult)
+        # for i in range(len(result) - 1):
+        #     e1 = result[i]
+        #     e2 = result[i + 1]
+        #     assert self._edge_connected(e1, e2)
         return result
