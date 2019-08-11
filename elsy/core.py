@@ -141,11 +141,20 @@ def shortest_path(source: str, target: str, prev):
         raise Exception("Source and target not connected")
 
     # Return reversed S. because we starting from target all the way back to the source.
-    return list(reversed(S))
+    result = list(reversed(S))
+    return result
 
 def shortest_path_to(source, targets, prev):
     return [ shortest_path(source, t, prev) for t in targets ]
 
+def edge_connected(e1, e2):
+    candidate_1 = e1.aId
+    if candidate_1 == e2.aId or candidate_1 == e2.bId:
+        return True
+    candidate_2 = e1.bId
+    if candidate_2 == e2.aId or candidate_2 == e2.bId:
+        return True
+    return False
 
 class ElsyTSPABC:
     def __init__(self, nodes, inters, edges):

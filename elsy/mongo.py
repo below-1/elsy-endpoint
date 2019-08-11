@@ -67,4 +67,7 @@ def get_edges_by_ids(ids: list):
         }
     })
     edges = list(edges)
+    # Sort the edges by order in ids
+    # Need to convert from ObjectId to str.
+    edges.sort(key=lambda e: ids.index(str(e['_id'])))
     return edges

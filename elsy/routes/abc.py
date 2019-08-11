@@ -31,4 +31,4 @@ def abc_tsp(source):
     edges_ids = [ e._id for e in route ]
     edges = get_edges_by_ids(edges_ids)
 
-    return jsonify(solution)
+    return jsonify(edges)
