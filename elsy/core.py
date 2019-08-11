@@ -197,7 +197,7 @@ class ElsyTSPABC:
             total += self._dist[u][v]
         return total
 
-    def abc(self, source, n=100, limit=10, maxiter=100):
+    def abc(self, source, n=1000, limit=10, maxiter=1000):
 
         Xs = []
         Fx = []
