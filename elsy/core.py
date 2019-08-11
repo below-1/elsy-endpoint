@@ -325,6 +325,7 @@ class ElsyTSPABC:
 
             # Here we construct the indirect route.
             subpath = shortest_path(u, v, self._prev[u])
+
             assert subpath[0] == u
             assert subpath[-1] == v
 

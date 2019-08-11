@@ -71,7 +71,6 @@ def find_nodes():
         elif jabatan == 'intersection':
             filter["jabatan"] = "intersection"
 
-
     results = list(mongo_db.node.find(filter))
     return jsonify(results)
 
